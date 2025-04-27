@@ -34,8 +34,45 @@ Seguindo a trilha pelo (link)[https://github.com/digitalinnovationone/trilha-jav
 - Aparelho Telefônico (Métodos: ligar(String numero), atender(), iniciarCorreioVoz())
 - Navegador na Internet (Métodos: exibirPagina(String url), adicionarNovaAba(), atualizarPagina())
 
-O resultado final do diagrama pode ser encontrado aqui no readME e no arquivo no repositório.
+```mermaid
+classDiagram
+    class iPhone {
+        +String musica
+        +String numero
+        +String url
+        +tocar()
+        +pausar()
+        +selecionarMusica(String musica)
+        +ligar(String numero)
+        +atender()
+        +iniciarCorreioVoz()
+        +exibirPagina(String url)
+        +adicionarNovaAba()
+        +atualizarPagina()
+    }
 
-<p align="center">
-  <img src="dio-uml-iphone.png" alt="Diagrama de classes do iPhone"/>
-</p>
+    class ReprodutorMusical {
+        +String musica
+        +tocar()
+        +pausar()
+        +selecionarMusica(String musica)
+    }
+
+    class AparelhoTelefonico {
+        +String numero
+        +ligar(String numero)
+        +atender()
+        +iniciarCorreioVoz()
+    }
+
+    class NavegadorInternet {
+        +String url
+        +exibirPagina(String url)
+        +adicionarNovaAba()
+        +atualizarPagina()
+    }
+
+    iPhone ..|> ReprodutorMusical
+    iPhone ..|> AparelhoTelefonico
+    iPhone ..|> NavegadorInternet
+```
